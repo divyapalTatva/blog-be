@@ -12,6 +12,7 @@ namespace blog_app_common.GenericResponse
     public class InitialData
     {
 
+        #region InitialDictionary Data
         public static Dictionary<int, BlogVM> BlogData()
         {
             var blogData = new Dictionary<int, BlogVM>()
@@ -26,6 +27,8 @@ namespace blog_app_common.GenericResponse
             };
             return blogData;
         }
+
+        #endregion
 
     }
 }

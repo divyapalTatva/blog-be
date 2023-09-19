@@ -16,8 +16,7 @@ namespace blog_app_services.ServiceRepository
 {
     public class AuthService : IAuthService
     {
-
-        #region GetAllMissionApplication
+        #region AuthenticateUSer
         public async Task<JsonResult> AuthUser(string password)
         {
             try
