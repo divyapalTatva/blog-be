@@ -1,0 +1,11 @@
+/.vs
+/blog-app-backend/bin
+/blog-app-backend/obj
+/blog-app-backend/.config
+/blog-app-backend/Properties/PublishProfiles
+/blog-app-services/bin
+/blog-app-services/obj
+/blog-app-common/obj
+/blog-app-common/bin
+/blog-app-models/obj
+/blog-app-models/bin
