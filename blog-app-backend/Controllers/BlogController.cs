@@ -22,25 +22,19 @@ namespace blog_app_backend.Controllers
         #endregion
 
         #region GetAllBlogs
-        //[Authorize]
         [HttpGet("GetAllBlogs")]
         public async Task<JsonResult> GetAllBlogs(string? search)
         {
             return await BlogService.GetAllBlogs(search);
-            //return new JsonResult(new GenericResponse<string> { Message = ResponseMessages.InternalServerError, StatusCode = blog_app_models.GenericResponse.StatusCodes.BadRequest, Result = false });
-
         }
 
         #endregion 
 
         #region GetBlogById
-        //[Authorize]
         [HttpGet("GetBlogById")]
         public async Task<JsonResult> GetBlogById(int? id)
         {
             return await BlogService.GetBlogById(id);
-            //return new JsonResult(new GenericResponse<string> { Message = ResponseMessages.InternalServerError, StatusCode = blog_app_models.GenericResponse.StatusCodes.BadRequest, Result = false });
-
         }
         #endregion 
 
@@ -50,8 +44,6 @@ namespace blog_app_backend.Controllers
         public async Task<JsonResult> AddUpdateBlog([FromBody] BlogVM? blogData)
         {
             return await BlogService.AddUpdateBlogData(blogData);
-            //return new JsonResult(new GenericResponse<string> { Message = ResponseMessages.InternalServerError, StatusCode = blog_app_models.GenericResponse.StatusCodes.BadRequest, Result = false });
-
         }
         #endregion 
         
@@ -61,8 +53,6 @@ namespace blog_app_backend.Controllers
         public async Task<JsonResult> DeleteBlogData(int id)
         {
             return await BlogService.DeleteBlogData(id);
-            //return new JsonResult(new GenericResponse<string> { Message = ResponseMessages.InternalServerError, StatusCode = blog_app_models.GenericResponse.StatusCodes.BadRequest, Result = false });
-
         }
         #endregion
     }
