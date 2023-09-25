@@ -28,7 +28,25 @@ namespace blog_app_backend.Controllers
             return await BlogService.GetAllBlogs(search);
         }
 
-        #endregion 
+        #endregion
+
+        #region GetAllTags
+        [HttpGet("GetAllTags")]
+        public async Task<JsonResult> GetAllTags()
+        {
+            return await BlogService.GetAllTags();
+        }
+
+        #endregion
+
+        #region AddNewTag
+        [Authorize]
+        [HttpPut("AddNewTag")]
+        public async Task<JsonResult> AddNewTag([FromBody] BlogTagData newTag)
+        {
+            return await BlogService.AddNewTag(newTag);
+        }
+        #endregion
 
         #region GetBlogById
         [HttpGet("GetBlogById")]

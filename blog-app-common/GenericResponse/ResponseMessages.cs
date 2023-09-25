@@ -17,5 +17,6 @@ namespace blog_app_common.GenericResponse
         public static string BlogAddedSuccess = "Blog added successfully";
         public static string BlogUpdatedSuccess = "Blog updated successfully";
         public static string BlogDeletedSuccess = "Blog deleted successfully";
+        public static string BlogDeletedFailure = "No Blog Deleted!!";
     }
 }

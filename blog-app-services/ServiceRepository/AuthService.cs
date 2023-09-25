@@ -1,6 +1,7 @@
 ﻿
 
 using blog_app_common.GenericResponse;
+using blog_app_models.BlogSpotContext;
 using blog_app_services.ServiceInterface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -16,6 +17,18 @@ namespace blog_app_services.ServiceRepository
 {
     public class AuthService : IAuthService
     {
+
+
+        #region Dependency Injection of DbContext 
+
+        private readonly BlogSpotContext BlogContext;
+
+        public AuthService(BlogSpotContext _BlogContext)
+        {
+            BlogContext = _BlogContext;
+        }
+        #endregion
+
         #region AuthenticateUSer
         public async Task<JsonResult> AuthUser(string password)
         {
@@ -23,7 +36,7 @@ namespace blog_app_services.ServiceRepository
             {
                 if (!String.IsNullOrEmpty(password))
                 {
-                    if (password == "User@123")
+                    if (BlogContext.Users.Where(u=>u.Password==password)!=null)
                     {
                         string token = CreateJwt();
                         return new JsonResult(new GenericResponse<string> { Message = ResponseMessages.Success, Data = token, StatusCode = StatusCodes.OK, Result = true });

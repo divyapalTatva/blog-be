@@ -14,5 +14,7 @@ namespace blog_app_services.ServiceInterface
         public Task<JsonResult> GetBlogById(int? id);
         public Task<JsonResult> AddUpdateBlogData(BlogVM blogData);
         public Task<JsonResult> DeleteBlogData(int id);
+        public Task<JsonResult> GetAllTags();
+        public Task<JsonResult> AddNewTag(BlogTagData newTag);
     }
 }
